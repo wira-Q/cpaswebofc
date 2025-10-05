@@ -1,26 +1,69 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html, body {
+  overflow-x: hidden;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* base font transition */
+html {
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* background blob */
+.blob-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #2e2e2e, #3b2c27, #1c1c1c);
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* blob lingkaran */
+.blob-bg::before,
+.blob-bg::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: -1;
+  animation: blob-move 20s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+
+/* blob pertama */
+.blob-bg::before {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at center, rgba(210, 150, 90, 0.5), rgba(60, 40, 20, 0));
+  top: -150px;
+  left: -150px;
+  animation-delay: 0s;
+}
+
+/* blob kedua */
+.blob-bg::after {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle at center, rgba(180, 180, 180, 0.4), rgba(60, 60, 60, 0));
+  bottom: -180px;
+  right: -180px;
+  animation-delay: 10s;
+}
+
+/* animasi blob */
+@keyframes blob-move {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.5) translate(60px, -40px);
+  }
+  100% {
+    transform: scale(1) translate(-40px, 40px);
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html, body {
+  overflow-x: hidden;
 }

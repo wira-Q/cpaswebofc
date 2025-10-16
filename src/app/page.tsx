@@ -26,20 +26,29 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4 text-center relative">
 
-      {/* Logo kiri atas */}
+     
       <div className="absolute top-4 left-6">
         <Image src="/logo.png" alt="Logo Ulang Tahun Tako" width={150} height={100} className="object-contain" />
       </div>
 
-      {/* Avatar kanan atas */}
+     
       <div className="absolute top-4 right-6">
         <div
           className="relative flex items-center gap-2 bg-gray-800 px-3 py-1.5 rounded-lg shadow-md cursor-pointer select-none"
           onClick={() => setOpen(!open)}
         >
-          <div className="w-7 h-7 bg-gray-700 rounded-full flex items-center justify-center">
-            <span className="text-white text-sm">?</span>
-          </div>
+
+
+<div className="w-7 h-7 bg-gray-700 rounded-full flex items-center justify-center overflow-hidden">
+  <Image
+    src="/default_profile_picture.png"
+    alt="Profile"
+    width={28}
+    height={28}
+    className="object-cover"
+  />
+</div>
+
           <span className="text-white text-sm font-medium">wira</span>
           <svg
             className={`w-4 h-4 text-white transform transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
@@ -98,10 +107,10 @@ export default function Home() {
           Lihat Penghargaan Hari Ulang Tahun Tako 2025 →
         </button>
         <div className="flex flex-col sm:flex-row gap-4 mt-5 mb-4">
-          <button className="relative bg-blue-400 px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
+          <button className="relative bg-blue-400 px-8 py-3 border-2 border-blue-600 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
             Temukan Kreator Favoritmu!
           </button>
-          <button className="relative bg-pink-400 px-6 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#db2777] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
+          <button className="relative bg-pink-400 border-2 border-pink-600 px-6 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#db2777] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
             Buat Akun
           </button>
         </div>
@@ -111,22 +120,22 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-7xl mx-auto mt-10 px-4 auto-rows-[380px]">
         {/* Box Biru */}
         <div className="relative overflow-visible">
-          <div className="absolute top-0 left-0 w-full h-full bg-blue-700 rounded-2xl translate-x-2 translate-y-2 z-0" />
-          <div className="relative bg-blue-400 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full">
+          <div className="absolute  top-0 left-0 w-full h-full bg-blue-700 rounded-2xl translate-x-2 translate-y-2 z-0" />
+          <div className="relative bg-blue-400 border-2 border-blue-600 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full">
             <h2 className="text-2xl font-extrabold mb-4">Apa Itu Tako?</h2>
             <p className="text-sm leading-relaxed ">
               <span className="font-bold">Tako</span> adalah platform monetisasi bagi para konten kreator untuk mendapatkan penghasilan lebih dari sekedar kreasi kontennya saja.
             </p>
             <p className="text-sm leading-relaxed ">
               <span className="font-bold">Dengan Tako, Kamu dapat berinteraksi lebih dekat dengan para penggemarmu sekaligus mendapatkan pendapatan lebih untuk mendukung kreativitasmu dalam berkarya.</span> </p>
-            <img src="/confused.png" alt="Mascot Biru" className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 object-contain" />
+            <img src="/confused.png" alt="Mascot Biru" className="absolute bottom-2 left-1/2 -translate-x-1/2 w-36 object-contain" />
           </div>
         </div>
 
         {/* Box Pink */}
         <div className="relative overflow-visible">
           <div className="absolute inset-0 translate-x-2 translate-y-2 bg-pink-700 rounded-2xl z-0" />
-          <div className="relative bg-pink-400 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full">
+          <div className="relative bg-pink-400 border-2 border-pink-600 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full">
             <h2 className="text-2xl font-extrabold mb-4">Fitur-Fitur Tako</h2>
             <ul className="list-decimal list-inside text-sm space-y-1">
               <li>Overlay Soundboard, Voice Note</li>
@@ -141,14 +150,14 @@ export default function Home() {
                 Punya ide / saran fitur? <span className="font-bold">Yuk beritahu kami!</span>
               </span>
             </p>
-            <img src="/teaching.png" alt="Mascot Pink"  className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 object-contain" />
+            <img src="/teaching.png" alt="Mascot Pink"  className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 object-contain" />
           </div>
         </div>
 
         {/* Box Hijau */}
 <div className="relative overflow-visible">
   <div className="absolute inset-0 translate-x-2 translate-y-2 bg-green-700 rounded-2xl z-0" />
-  <div className="relative bg-green-400 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full flex flex-col">
+  <div className="relative bg-green-400 border-2 border-green-600 text-white p-6 rounded-2xl z-10 min-h-[360px] h-full flex flex-col">
     
     <h2 className="text-2xl font-extrabold mb-4">Masih Bingung?</h2>
     <p className="text-sm leading-relaxed mb-4">
@@ -160,11 +169,11 @@ export default function Home() {
             Temukan Kreator Favoritmu!
           </button>
 
-    {/* Maskot dipaksa ke bawah */}
+   
     <img
       src="/ask.png"
       alt="Mascot Hijau"
-       className="absolute bottom-2 left-1/2 -translate-x-1/2 w-28 object-contain"
+       className="absolute bottom-2 left-1/2 -translate-x-1/2 w-36 object-contain"
     />
   </div>
 </div>
@@ -187,7 +196,7 @@ export default function Home() {
     Tako digunakan oleh berbagai konten kreator dari berbagai macam kategori, mulai dari Streamer, Cosplayer, Musisi, Seniman, Komunitas, dan Lain-lainnya!
   </p>
   
-  <button className="relative bg-pink-400 px-6 sm:px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#db2777] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
+  <button className="relative bg-pink-400 border-2 border-pink-600 px-6 sm:px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#db2777] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#db2777] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
     Jelajahi Kreator Tako!
   </button>
 </section>
@@ -221,7 +230,7 @@ export default function Home() {
   {creators.map((creator, index) => (
     <SwiperSlide key={index}>
       <div className="bg-gray-800 rounded-xl p-4 text-white shadow-md flex flex-col h-full min-h-[300px]">
-        <div className="w-full aspect-[4/3] bg-gray-700 rounded-md mb-3 overflow-hidden">
+        <div className="w-full aspect-[4/3] bg-gray-600 rounded-md mb-3 overflow-hidden">
           <img
             src={creator.image}
             alt={creator.name}
@@ -235,7 +244,7 @@ export default function Home() {
         <p className="text-sm text-gray-300 truncate">
           {creator.username} | Youtube Live Streamer
         </p>
-        <button className="mt-3 w-full relative bg-blue-400 px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
+        <button className="mt-3 w-full relative bg-blue-400 border-2 border-blue-600 px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
           Lihat Kreator
         </button>
       </div>
@@ -254,7 +263,7 @@ export default function Home() {
   <p className="text-gray-300 text-sm text-center max-w-md">
     Yuk bergabung dan kembangkan komunitasmu bersama Tako!
   </p>
-  <button className="relative bg-blue-400 px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
+  <button className="relative bg-blue-400 border-2 border-blue-600 px-8 py-3 rounded-md font-semibold text-white shadow-[4px_6px_0_0_#2563eb] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_4px_0_0_#2563eb] active:translate-x-[4px] active:translate-y-[6px] active:shadow-none transition-all duration-150">
     buat akun
   </button>
 
